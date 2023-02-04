@@ -8,12 +8,13 @@ export interface RenameListModalProps {
 }
 
 export default function RenameListModal(props: RenameListModalProps) {
-  const [title, setTitle] = useState<string>("");
+  const [title, setTitle] = useState<string>(props.title);
 
   const { modalState, handleCloseModal, handleRenameList } =
     useContext(KanbanContext);
 
   const handleRename = () => {
+    if (title === "") return;
     handleRenameList(props.listIndex, title);
     handleCloseModal();
   };
