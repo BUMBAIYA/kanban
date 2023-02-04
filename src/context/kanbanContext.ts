@@ -63,6 +63,7 @@ const initialContextState: KanbanContext = {
   modalState: defaultModalContextState,
   handleCreateList: () => {},
   handleDeleteList: () => {},
+  handleRenameList: () => {},
   handleCreateCard: () => {},
   handleDeleteCard: () => {},
   handleUpdateCard: () => {},
