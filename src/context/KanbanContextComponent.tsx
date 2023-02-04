@@ -6,6 +6,9 @@ import {
   DeleteListModal,
   DeleteListModalProps,
 } from "../components/modal/DeleteListModal";
+import RenameListModal, {
+  RenameListModalProps,
+} from "../components/modal/RenameListModal";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { s4 } from "../utility/uuidGenerator";
 import {
@@ -37,6 +40,12 @@ export function KanbanContextComponent(props: IAppProps) {
   const handleDeleteList = (listIndex: number) => {
     const tempList = [...kanbanState];
     tempList.splice(listIndex, 1);
+    setKanbanState(tempList);
+  };
+
+  const handleRenameList = (listIndex: number, title: string) => {
+    const tempList = [...kanbanState];
+    tempList[listIndex].title = title;
     setKanbanState(tempList);
   };
 
@@ -127,6 +136,14 @@ export function KanbanContextComponent(props: IAppProps) {
         });
         break;
       }
+      case "RENAME_LIST": {
+        setModalState({
+          type: "RENAME_LIST",
+          isOpen: true,
+          modalProps: props.modalProps,
+        });
+        break;
+      }
       default: {
         return;
       }
@@ -144,6 +161,11 @@ export function KanbanContextComponent(props: IAppProps) {
         case "UPDATE_CARD": {
           return <CardModal {...(state.modalProps as CardModalProps)} />;
         }
+        case "RENAME_LIST": {
+          return (
+            <RenameListModal {...(state.modalProps as RenameListModalProps)} />
+          );
+        }
         default: {
           return null;
         }
@@ -158,6 +180,7 @@ export function KanbanContextComponent(props: IAppProps) {
         modalState,
         handleCreateList,
         handleCreateCard,
+        handleRenameList,
         handleDeleteList,
         handleDeleteCard,
         handleUpdateCard,

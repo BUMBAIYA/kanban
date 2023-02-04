@@ -40,6 +40,15 @@ export function ListMenu(props: IListMenuProps) {
                       ? "bg-indigo-500 text-white"
                       : "text-gray-900 dark:text-white"
                   } group flex w-full items-center rounded-md px-2 py-2 text-xs font-semibold`}
+                  onClick={() =>
+                    handleOpenModal({
+                      type: "RENAME_LIST",
+                      modalProps: {
+                        listIndex: props.listIndex,
+                        title: props.title,
+                      },
+                    })
+                  }
                 >
                   <PencilIcon className="mr-2 h-4 w-4" />
                   Rename list
