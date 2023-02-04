@@ -2,6 +2,17 @@
 
 Kanban board to keep track of projects and tasks
 
+👉 [View live](https://kannban-board.vercel.app/)
+
+## Dark Mode
+![image](https://user-images.githubusercontent.com/85615075/216763229-716f7d20-0c97-40da-9977-aeb09a0fa283.png)
+
+## Light Mode
+![image](https://user-images.githubusercontent.com/85615075/216763268-c9d972f3-e80b-4acd-99a4-e298f4b4f606.png)
+
+## Card Modal
+![image](https://user-images.githubusercontent.com/85615075/216763287-f87e66a2-8f8a-4d54-8005-cd7208f3cdf4.png)
+
 ## Features ✨
 
 - Drag & drop tasks
