@@ -106,7 +106,7 @@ export function CardModal(props: CardModalProps) {
 
   return (
     <Transition appear show={modalState.isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={handleCloseModal}>
+      <Dialog as="div" className="relative z-[60]" onClose={handleCloseModal}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-250"
@@ -134,14 +134,14 @@ export function CardModal(props: CardModalProps) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white dark:bg-slate-900 shadow-xl">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
                         <input
                           className="flex-1 rounded-lg border-transparent pl-0 text-xl font-bold transition-all duration-150 ease-in hover:border-slate-500 hover:pl-3 focus:border focus:pl-3 hover:focus:border-blue-600 dark:bg-slate-900 dark:text-white dark:hover:border"
                           type="text"
                           value={title}
                           onChange={(e) => setTitle(e.target.value)}
                         />
-                        <div className="ml-3 flex h-7 items-center gap-3">
+                        <div className="flex h-7 items-center">
                           <button
                             className={classNames(
                               completed

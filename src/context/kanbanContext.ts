@@ -3,11 +3,7 @@ import { KanbanBoardState } from "../components/kanban/KanbanTypes";
 import { tagColors } from "../components/modal/CreateTagModal";
 import { GetBaseURL } from "../utility/baseUrl";
 import { s4 } from "../utility/uuidGenerator";
-import {
-  hanbleOpenModalProps,
-  KanbanContext,
-  ModalContextState,
-} from "./KanbanContextTypes";
+import { KanbanContext, ModalContextState } from "./KanbanContextTypes";
 
 export const defaultKanbanBoardState: KanbanBoardState = [
   {
@@ -68,7 +64,7 @@ const initialContextState: KanbanContext = {
   handleDeleteCard: () => {},
   handleUpdateCard: () => {},
   handleDragEnd: () => {},
-  handleOpenModal: (props: hanbleOpenModalProps) => {},
+  handleOpenModal: () => {},
   handleCloseModal: () => {},
 };
 
