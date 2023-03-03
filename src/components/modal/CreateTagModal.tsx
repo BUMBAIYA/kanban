@@ -32,7 +32,7 @@ export function CreateTagModal(props: ITagsProps) {
 
   return (
     <Transition appear show={props.show}>
-      <Dialog as="div" className="relative z-40" onClose={props.handleClose}>
+      <Dialog as="div" className="relative z-[70]" onClose={props.handleClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
