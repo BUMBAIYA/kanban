@@ -41,21 +41,9 @@ export function Navbar(props: INavbarProps) {
           ref={navRef}
         >
           <div className="absolute inset-x-0 top-full h-px bg-zinc-900/10 transition dark:bg-white/10"></div>
-          <div className="flex items-center">
-            <img
-              src="/dark-logo.svg"
-              alt="kanban logo"
-              className="hidden dark:block h-7 w-7"
-            />
-            <img
-              src="/light-logo.svg"
-              alt="kanban logo"
-              className="block dark:hidden h-7 w-7"
-            />
-            <h1 className="flex items-center text-2xl dark:text-slate-300 font-bold py-1">
-              Kanban
-            </h1>
-          </div>
+          <h1 className="flex items-center text-2xl dark:text-slate-300 font-bold py-1">
+            Kanban
+          </h1>
           <div className="flex items-center gap-5">
             <ThemeSwitch
               buttonClass="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-zinc-900/5 dark:hover:bg-white/5"

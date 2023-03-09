@@ -2,7 +2,6 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { memo, useContext } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import KanbanContext from "../../context/kanbanContext";
-import useEvent from "../../hooks/useEvent";
 import { GetBaseURL } from "../../utility/baseUrl";
 import { classNames } from "../../utility/css";
 import { KanbanCard } from "./KanbanTypes";
@@ -15,22 +14,6 @@ export interface IKanbanCardComponentProps {
 
 export default function KanbanCardComponent(props: IKanbanCardComponentProps) {
   const { handleOpenModal } = useContext(KanbanContext);
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.repeat) return;
-    if (event.key === "Enter") {
-      handleOpenModal({
-        type: "UPDATE_CARD",
-        modalProps: {
-          listIndex: props.listIndex,
-          cardIndex: props.cardIndex,
-          card: props.card,
-        },
-      });
-    }
-  };
-
-  useEvent("keydown", handleKeyDown, false);
 
   const calculateTaskCompleted = () => {
     let completedTask = 0;
@@ -47,7 +30,6 @@ export default function KanbanCardComponent(props: IKanbanCardComponentProps) {
       {(provided) => (
         <div
           className="mb-3 w-64 rounded-lg bg-white shadow-sm transition-shadow duration-200 ease-in-out hover:shadow-lg hover:ring-0 focus:border-indigo-600 focus:outline-none border border-slate-200 dark:border-slate-600 focus:ring focus:ring-indigo-600 dark:bg-slate-800 dark:text-white dark:hover:shadow-slate-800/60"
-          tabIndex={0}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
