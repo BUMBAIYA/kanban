@@ -5,7 +5,7 @@ export function Footer(props: IFooterProps) {
     <footer className="space-y-10 pb-10 sm:pb-0">
       <div className="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-white/5 sm:flex-row">
         <p className="text-xs text-zinc-600 dark:text-zinc-400">
-          © Copyright 2023. All rights reserved.
+          {"< />"} with ♡ by Amit Chauhan
         </p>
         <div className="flex gap-4">
           <a
