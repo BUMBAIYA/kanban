@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 type ThemeSwitchProps = {
   buttonClass?: string;
@@ -8,27 +9,19 @@ type ThemeSwitchProps = {
 };
 
 export default function ThemeSwitch(props: ThemeSwitchProps) {
+  const [theme, setTheme] = useLocalStorage<"dark" | "light">("theme", "light");
+
   const handleToggle = () => {
-    document.documentElement.classList.toggle("dark");
-    localStorage.getItem("theme") === "light"
-      ? localStorage.setItem("theme", "dark")
-      : localStorage.setItem("theme", "light");
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   useEffect(() => {
-    if (!localStorage.getItem("theme")) {
-      let isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (isDark) {
-        localStorage.setItem("theme", "dark");
-        document.documentElement.setAttribute("class", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
+    if (theme === "dark") {
+      document.documentElement.setAttribute("class", "dark");
     } else {
-      if (localStorage.getItem("theme") === "dark")
-        document.documentElement.setAttribute("class", "dark");
+      document.documentElement.setAttribute("class", "light");
     }
-  }, []);
+  }, [theme]);
 
   return (
     <button

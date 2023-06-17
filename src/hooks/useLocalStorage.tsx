@@ -5,12 +5,19 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useEventListener } from "./useEventListener";
 
 type setValue<T> = Dispatch<SetStateAction<T>>;
 
+declare global {
+  interface WindowEventMap {
+    "local-storage": CustomEvent;
+  }
+}
+
 export default function useLocalStorage<T>(
   key: string,
-  initialValue: T
+  initialValue: T,
 ): [T, setValue<T>] {
   const readValue = useCallback((): T => {
     try {
@@ -30,16 +37,31 @@ export default function useLocalStorage<T>(
         const newValue = value instanceof Function ? value(storedValue) : value;
         window.localStorage.setItem(key, JSON.stringify(newValue));
         setStoredValue(newValue);
+        window.dispatchEvent(new Event("local-storage"));
       } catch (error) {
         console.warn(`Error setting localStorage key “${key}”:`, error);
       }
     },
-    [storedValue]
+    [storedValue],
   );
 
   useEffect(() => {
     setStoredValue(readValue);
   }, []);
+
+  const handleStorageChange = useCallback(
+    (event: StorageEvent | CustomEvent) => {
+      if ((event as StorageEvent)?.key && (event as StorageEvent).key !== key) {
+        return;
+      }
+      setStoredValue(readValue());
+    },
+    [key, readValue],
+  );
+
+  useEventListener("storage", handleStorageChange);
+
+  useEventListener("local-storage", handleStorageChange);
 
   return [storedValue, setValue];
 }
