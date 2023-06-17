@@ -16,11 +16,7 @@ export default function ThemeSwitch(props: ThemeSwitchProps) {
   };
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.setAttribute("class", "dark");
-    } else {
-      document.documentElement.setAttribute("class", "light");
-    }
+    document.documentElement.setAttribute("class", theme);
   }, [theme]);
 
   return (
