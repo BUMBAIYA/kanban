@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.8",
@@ -14,6 +15,7 @@
     "autoprefixer": "^10.4.13",
     "dayjs": "^1.11.7",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
@@ -28,6 +30,8 @@
     "@types/react-beautiful-dnd": "^13.1.3",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }
