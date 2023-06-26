@@ -62,7 +62,7 @@ export function ListMenu(props: IListMenuProps) {
                     active
                       ? "bg-red-500 text-white"
                       : "text-gray-900 dark:text-white",
-                    "group flex w-full items-center rounded-md px-2 py-2 text-xs font-semibold"
+                    "group flex w-full items-center rounded-md px-2 py-2 text-xs font-semibold",
                   )}
                   onClick={() =>
                     handleOpenModal({

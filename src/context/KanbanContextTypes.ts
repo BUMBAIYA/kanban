@@ -35,7 +35,7 @@ export type KanbanContext = {
   handleUpdateCard: (
     listIndex: number,
     cardIndex: number,
-    updatedCard: KanbanCard
+    updatedCard: KanbanCard,
   ) => void;
   handleDragEnd: (dropResult: DropResult) => void;
   handleOpenModal: (props: hanbleOpenModalProps) => void;

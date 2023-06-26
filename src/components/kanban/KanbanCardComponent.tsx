@@ -29,7 +29,7 @@ export default function KanbanCardComponent(props: IKanbanCardComponentProps) {
     <Draggable draggableId={props.card.id} index={props.cardIndex}>
       {(provided) => (
         <div
-          className="mb-3 w-64 rounded-lg bg-white shadow-sm transition-shadow duration-200 ease-in-out hover:shadow-lg hover:ring-0 focus:border-indigo-600 focus:outline-none border border-slate-200 dark:border-slate-600 focus:ring focus:ring-indigo-600 dark:bg-slate-800 dark:text-white dark:hover:shadow-slate-800/60"
+          className="mb-3 w-64 rounded-lg border border-slate-200 bg-white shadow-sm transition-shadow duration-200 ease-in-out focus:border-indigo-600 focus:outline-none focus:ring focus:ring-indigo-600 hover:shadow-lg hover:ring-0 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:hover:shadow-slate-800/60"
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -48,7 +48,7 @@ export default function KanbanCardComponent(props: IKanbanCardComponentProps) {
             <div
               className={classNames(
                 props.card.completed ? "opacity-50" : "opacity-100",
-                "h-40 overflow-hidden rounded-t-md"
+                "h-40 overflow-hidden rounded-t-md",
               )}
             >
               <img
@@ -69,7 +69,7 @@ export default function KanbanCardComponent(props: IKanbanCardComponentProps) {
                   props.card.completed
                     ? "text-slate-400 dark:text-slate-500"
                     : "dark:text-white",
-                  "truncate text-base font-semibold"
+                  "truncate text-base font-semibold",
                 )}
               >
                 {props.card.title}
@@ -92,12 +92,12 @@ export default function KanbanCardComponent(props: IKanbanCardComponentProps) {
                     </p>
                   </div>
                 )}
-                <div className="flex gap-1 flex-wrap">
+                <div className="flex flex-wrap gap-1">
                   {props.card.tags.map((_tag, index) => (
                     <span
                       className={classNames(
                         props.card.tags.length > 0 ? "mt-1" : "",
-                        `px-3 py-1 text-sm font-semibold rounded-md ${_tag.color}`
+                        `rounded-md px-3 py-1 text-sm font-semibold ${_tag.color}`,
                       )}
                       key={index}
                     >

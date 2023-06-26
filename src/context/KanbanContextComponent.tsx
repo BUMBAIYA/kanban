@@ -24,11 +24,11 @@ export function KanbanContextComponent(props: IAppProps) {
   const { children } = props;
   const [kanbanState, setKanbanState] = useLocalStorage<KanbanBoardState>(
     "kanban-state",
-    defaultKanbanBoardState
+    defaultKanbanBoardState,
   );
 
   const [modalState, setModalState] = useState<ModalContextState>(
-    defaultModalContextState
+    defaultModalContextState,
   );
 
   const handleCreateList = (title: string) => {
@@ -71,7 +71,7 @@ export function KanbanContextComponent(props: IAppProps) {
   const handleUpdateCard = (
     listIndex: number,
     cardIndex: number,
-    updatedCard: KanbanCard
+    updatedCard: KanbanCard,
   ) => {
     const tempList = [...kanbanState];
     tempList[listIndex].cards[cardIndex] = updatedCard;
@@ -98,12 +98,12 @@ export function KanbanContextComponent(props: IAppProps) {
     }
 
     const s_b_index = kanbanState.findIndex(
-      (_board) => _board.id === source.droppableId
+      (_board) => _board.id === source.droppableId,
     );
     if (s_b_index < 0) return;
 
     const t_b_index = kanbanState.findIndex(
-      (_board) => _board.id === destination.droppableId
+      (_board) => _board.id === destination.droppableId,
     );
     if (t_b_index < 0) return;
 

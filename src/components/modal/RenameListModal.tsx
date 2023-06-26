@@ -45,7 +45,7 @@ export default function RenameListModal(props: RenameListModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-slate-900">
                 <Dialog.Title
                   as="h3"
                   className="text-lg font-medium leading-6 text-slate-900 dark:text-white"
@@ -55,7 +55,7 @@ export default function RenameListModal(props: RenameListModalProps) {
                 <div className="mt-3">
                   <input
                     type="text"
-                    className="w-full rounded-lg dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border placeholder:font-light font-semibold"
+                    className="w-full rounded-lg font-semibold placeholder:font-light dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border"
                     placeholder="Tag name...."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -65,7 +65,7 @@ export default function RenameListModal(props: RenameListModalProps) {
                 <div className="mt-4 flex justify-end gap-3">
                   <button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-emerald-700 px-3 py-1 text-base font-medium text-white hover:bg-emerald-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-emerald-700 px-3 py-1 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 hover:bg-emerald-600"
                     onClick={handleRename}
                   >
                     Rename
@@ -73,7 +73,7 @@ export default function RenameListModal(props: RenameListModalProps) {
                   <button
                     onClick={handleCloseModal}
                     type="button"
-                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:text-white"
+                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-indigo-600 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 dark:text-white"
                   >
                     Cancel
                   </button>

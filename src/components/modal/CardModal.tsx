@@ -132,11 +132,11 @@ export function CardModal(props: CardModalProps) {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white dark:bg-slate-900 shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl dark:bg-slate-900">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                       <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
                         <input
-                          className="flex-1 rounded-lg border-transparent pl-0 text-xl font-bold transition-all duration-150 ease-in hover:border-slate-500 hover:pl-3 focus:border focus:pl-3 hover:focus:border-blue-600 dark:bg-slate-900 dark:text-white dark:hover:border"
+                          className="flex-1 rounded-lg border-transparent pl-0 text-xl font-bold transition-all duration-150 ease-in focus:border focus:pl-3 hover:border-slate-500 hover:pl-3 hover:focus:border-blue-600 dark:bg-slate-900 dark:text-white dark:hover:border"
                           type="text"
                           value={title}
                           onChange={(e) => setTitle(e.target.value)}
@@ -147,7 +147,7 @@ export function CardModal(props: CardModalProps) {
                               completed
                                 ? "bg-emerald-700 text-white dark:bg-emerald-800"
                                 : "bg-slate-300",
-                              "inline-block rounded-lg py-1 px-3 text-sm font-semibold"
+                              "inline-block rounded-lg py-1 px-3 text-sm font-semibold",
                             )}
                             onClick={() => setCompleted((prev) => !prev)}
                           >
@@ -178,7 +178,7 @@ export function CardModal(props: CardModalProps) {
                         </span>
                         <textarea
                           ref={descTextAreaRef}
-                          className="max-h-28 w-full rounded-lg dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border placeholder:font-light"
+                          className="max-h-28 w-full rounded-lg placeholder:font-light dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border"
                           placeholder="Description...."
                           value={desc}
                           onChange={(e) => setDesc(e.target.value)}
@@ -190,7 +190,7 @@ export function CardModal(props: CardModalProps) {
                         </span>
                         <textarea
                           ref={imageTextAreaRef}
-                          className="max-h-16 w-full rounded-lg dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border placeholder:font-light"
+                          className="max-h-16 w-full rounded-lg placeholder:font-light dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400 dark:hover:border"
                           placeholder="Image url...."
                           value={imageUrl}
                           onChange={(e) => setImageUrl(e.target.value)}
@@ -200,10 +200,10 @@ export function CardModal(props: CardModalProps) {
                         <span className="w-28 text-sm dark:text-slate-500">
                           Tag
                         </span>
-                        <div className="w-full gap-2 flex flex-wrap">
+                        <div className="flex w-full flex-wrap gap-2">
                           {tags.map((tag, index) => (
                             <button
-                              className={`text-sm py-1 pl-2 pr-1 gap-1 hover:bg-opacity-80 flex font-semibold items-center rounded-lg ${tag.color}`}
+                              className={`flex items-center gap-1 rounded-lg py-1 pl-2 pr-1 text-sm font-semibold hover:bg-opacity-80 ${tag.color}`}
                               role="button"
                               aria-label="remove tag"
                               key={index}
@@ -218,7 +218,7 @@ export function CardModal(props: CardModalProps) {
                             aria-label="create tag"
                             onClick={() => setOpenTagModal(true)}
                           >
-                            <PlusIcon className="rounded-full border border-dashed border-slate-500 dark:border-white p-1 h-7 w-7 dark:stroke-slate-300" />
+                            <PlusIcon className="h-7 w-7 rounded-full border border-dashed border-slate-500 p-1 dark:border-white dark:stroke-slate-300" />
                           </button>
                           <CreateTagModal
                             show={openTagModal}
@@ -227,7 +227,7 @@ export function CardModal(props: CardModalProps) {
                           />
                         </div>
                       </div>
-                      <div className="border-t-[1px] border-slate-200 dark:border-slate-700 my-4"></div>
+                      <div className="my-4 border-t-[1px] border-slate-200 dark:border-slate-700"></div>
                       <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:gap-3">
                         <span className="w-28 text-sm dark:text-slate-500">
                           Tasks
@@ -235,13 +235,13 @@ export function CardModal(props: CardModalProps) {
 
                         <div className="w-full">
                           {tasks.length > 0 && (
-                            <div className="my-2 w-full h-6 bg-slate-100 dark:bg-slate-500 rounded-md overflow-hidden">
+                            <div className="my-2 h-6 w-full overflow-hidden rounded-md bg-slate-100 dark:bg-slate-500">
                               {tasks.length > 0 && (
                                 <div
                                   style={{
                                     width: `${calculateTaskPercentage()}%`,
                                   }}
-                                  className="bg-green-400 h-6 justify-center flex items-center transition-transform duration-100 ease-in"
+                                  className="flex h-6 items-center justify-center bg-green-400 transition-transform duration-100 ease-in"
                                 >
                                   {calculateTaskPercentage() > 0 &&
                                     `${calculateTaskPercentage()}%`}
@@ -253,7 +253,7 @@ export function CardModal(props: CardModalProps) {
                           {tasks.map((_t, index) => (
                             <div
                               key={index}
-                              className="py-3 px-4 bg-slate-100 dark:bg-slate-800 dark:text-white mb-2 rounded-lg justify-between flex items-center"
+                              className="mb-2 flex items-center justify-between rounded-lg bg-slate-100 py-3 px-4 dark:bg-slate-800 dark:text-white"
                             >
                               <div>
                                 <input
@@ -285,7 +285,7 @@ export function CardModal(props: CardModalProps) {
                         </div>
                       </div>
                     </div>
-                    <div className="py-6 backdrop-blur-sm border-t-[1px] border-slate-700 px-4 flex justify-between">
+                    <div className="flex justify-between border-t-[1px] border-slate-700 py-6 px-4 backdrop-blur-sm">
                       <div className="">
                         <button
                           onClick={deleteCard}
@@ -308,7 +308,7 @@ export function CardModal(props: CardModalProps) {
                         <button
                           onClick={handleCloseModal}
                           type="button"
-                          className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:text-white"
+                          className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-base font-medium transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-indigo-600 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 dark:text-white"
                         >
                           Cancel
                         </button>

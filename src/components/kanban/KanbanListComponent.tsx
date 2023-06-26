@@ -20,7 +20,7 @@ function KanbanListComponent(props: IKanbanListComponentProps) {
         <div
           className={classNames(
             props.listIndex > 0 ? "ml-4" : "",
-            "rounded-lg border border-slate-300 bg-slate-100 dark:border-slate-900 dark:bg-slate-600"
+            "rounded-lg border border-slate-300 bg-slate-100 dark:border-slate-900 dark:bg-slate-600",
           )}
           {...provided.draggableProps}
           ref={provided.innerRef}

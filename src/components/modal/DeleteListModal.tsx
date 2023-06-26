@@ -75,7 +75,7 @@ export function DeleteListModal(props: DeleteListModalProps) {
                   <button
                     onClick={handleCloseModal}
                     type="button"
-                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-sm font-medium transition-colors duration-150 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:text-white"
+                    className="inline-flex justify-center rounded-md border bg-transparent px-3 py-1 text-sm font-medium transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-indigo-600 hover:border-indigo-600 hover:ring-1 hover:ring-indigo-600 dark:text-white"
                   >
                     Cancel
                   </button>

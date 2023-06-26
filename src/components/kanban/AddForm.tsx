@@ -75,7 +75,7 @@ export function AddForm(props: IAddFormProps) {
       ) : (
         <button
           onClick={() => setShowForm((prev) => !prev)}
-          className="flex min-w-[256px] items-center justify-center gap-1 rounded-lg border border-slate-300 bg-slate-200 py-2 px-3 text-sm font-semibold transition-colors duration-200 hover:border-indigo-600 hover:bg-indigo-100/50 focus:border-none focus:border-indigo-600 focus:outline-none focus:ring focus:ring-indigo-600 dark:border-slate-500 dark:bg-slate-600 dark:text-white dark:hover:border-indigo-600 dark:hover:bg-indigo-900/20"
+          className="flex min-w-[256px] items-center justify-center gap-1 rounded-lg border border-slate-300 bg-slate-200 py-2 px-3 text-sm font-semibold transition-colors duration-200 focus:border-none focus:border-indigo-600 focus:outline-none focus:ring focus:ring-indigo-600 hover:border-indigo-600 hover:bg-indigo-100/50 dark:border-slate-500 dark:bg-slate-600 dark:text-white dark:hover:border-indigo-600 dark:hover:bg-indigo-900/20"
         >
           <PlusIcon className="h-4 w-5" />
           {props.text}

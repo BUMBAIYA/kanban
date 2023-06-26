@@ -10,7 +10,7 @@ export function Navbar(props: INavbarProps) {
     inMin: number,
     inMax: number,
     outMin: number,
-    outMax: number
+    outMax: number,
   ) {
     return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
   }
@@ -20,11 +20,11 @@ export function Navbar(props: INavbarProps) {
     if (scrolledHeight < 60) {
       navRef.current?.style.setProperty(
         "--bg-opacity-light",
-        "" + scale(scrolledHeight, 1, 59, 0.4, 0.9)
+        "" + scale(scrolledHeight, 1, 59, 0.4, 0.9),
       );
       navRef.current?.style.setProperty(
         "--bg-opacity-dark",
-        "" + scale(scrolledHeight, 1, 59, 0.2, 0.8)
+        "" + scale(scrolledHeight, 1, 59, 0.2, 0.8),
       );
     }
   };
@@ -41,7 +41,7 @@ export function Navbar(props: INavbarProps) {
           ref={navRef}
         >
           <div className="absolute inset-x-0 top-full h-px bg-zinc-900/10 transition dark:bg-white/10"></div>
-          <h1 className="flex items-center text-2xl dark:text-slate-300 font-bold py-1">
+          <h1 className="flex items-center py-1 text-2xl font-bold dark:text-slate-300">
             Kanban
           </h1>
           <div className="flex items-center gap-5">
