@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply box-border bg-white dark:bg-slate-900;
+  @apply scroll-thin m-0 box-border bg-white p-0 antialiased dark:bg-slate-900;
 }
 
-.dark .dark-icon {
-  fill: #fff;
-  display: none;
+@layer utilities {
+  .scroll-thin {
+    @apply scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400 scrollbar-track-rounded-full scrollbar-thumb-rounded-full dark:scrollbar-track-slate-600 dark:scrollbar-thumb-slate-400;
+  }
 }
