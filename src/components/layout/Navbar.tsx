@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import ThemeSwitch from "./ThemeSwitch";
+import LogoIcon from "../kanban/LogoIcon";
 
 export interface INavbarProps {}
 
@@ -41,8 +42,11 @@ export function Navbar(props: INavbarProps) {
           ref={navRef}
         >
           <div className="absolute inset-x-0 top-full h-px bg-zinc-900/10 transition dark:bg-white/10"></div>
-          <h1 className="flex items-center py-1 text-2xl font-bold dark:text-slate-300">
-            Kanban
+          <h1 className="flex items-center gap-2 py-1 text-2xl font-bold dark:text-slate-300">
+            <span className="h-7">
+              <LogoIcon />
+            </span>
+            <span className="hidden md:inline">Kanban</span>
           </h1>
           <div className="flex items-center gap-5">
             <ThemeSwitch
