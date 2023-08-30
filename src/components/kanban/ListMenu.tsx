@@ -30,7 +30,7 @@ export function ListMenu(props: IListMenuProps) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 focus:outline-none focus:ring-indigo-600 dark:bg-slate-900">
+        <Menu.Items className="absolute right-0 z-20 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 focus:outline-none focus:ring-indigo-600 dark:bg-slate-900">
           <div className="p-1">
             <Menu.Item>
               {({ active }) => (
