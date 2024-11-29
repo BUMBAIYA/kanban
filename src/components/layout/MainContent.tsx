@@ -5,7 +5,7 @@ export interface IMainContentProps {}
 
 export function MainContent(props: IMainContentProps) {
   return (
-    <main className="scroll-thin flex-1 overflow-x-scroll py-6 sm:py-10">
+    <main className="flex-1 py-6 sm:py-10">
       <KanbanContextComponent>
         <KanbanBoard />
       </KanbanContextComponent>

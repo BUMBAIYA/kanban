@@ -19,7 +19,7 @@ export function KanbanBoard(props: IKanbanBoardProps) {
       >
         {(provided) => (
           <div
-            className="flex h-full flex-1 flex-row items-start p-1 pb-10"
+            className="scroll-thin flex h-full flex-1 flex-row items-start overflow-x-auto p-1 pb-10"
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
